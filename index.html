@@ -1,1 +1,92 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>VTU Hub | Login</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="logo">
+                <i class="fas fa-tower-cell"></i>
+                <h2>VTU Hub</h2>
+                <p class="tagline">Fast & Reliable Top-ups</p>
+            </div>
+            <div class="tab-buttons">
+                <button id="loginTab" class="active">Login</button>
+                <button id="signupTab">Sign Up</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm">
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="loginEmail" placeholder="Email address" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn-primary">Login <i class="fas fa-arrow-right"></i></button>
+                <div class="forgot-password">
+                    <a href="#" id="forgotPasswordLink">Forgot Password?</a>
+                </div>
+                <div id="loginError" class="error-message"></div>
+            </form>
+
+            <!-- Signup Form -->
+            <form id="signupForm" style="display: none;">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="signupName" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="signupEmail" placeholder="Email address" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="signupPassword" placeholder="Password (min. 6 characters)" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-check-circle"></i>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit" class="btn-primary">Create Account <i class="fas fa-user-plus"></i></button>
+                <div id="signupError" class="error-message"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgotPasswordModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-key"></i> Reset Password</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Enter your email address and we'll send you a link to reset your password.</p>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="resetEmail" placeholder="Email address" required>
+                </div>
+                <button id="resetPasswordBtn" class="btn-primary">Send Reset Link <i class="fas fa-paper-plane"></i></button>
+                <div id="resetMessage" class="message"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer"></div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
