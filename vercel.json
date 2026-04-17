@@ -1,1 +1,28 @@
-
+{
+  "name": "vtu-hub",
+  "version": 2,
+  "builds": [
+    {
+      "src": "*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "api/*.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ],
+  "env": {
+    "VTU_API_KEY": "@vtu_api_key",
+    "VTU_SECRET_KEY": "@vtu_secret_key"
+  }
+}
